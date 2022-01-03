@@ -59,6 +59,6 @@ class DataController extends Controller
             'konfirmasi_pembayaran' => 'Belum Konfirmasi',
         ];
         $this->DataModel->addDataCalonSiswa($data);
-        return redirect('/form-pendaftaran/success');
+        return redirect('https://api.whatsapp.com/send?phone=+628982023608&text=ingin mengkorfimasi pembayaran atas nama =' . $nama_lengkap . ' ');
     }
 }

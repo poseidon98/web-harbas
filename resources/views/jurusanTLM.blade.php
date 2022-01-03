@@ -13,6 +13,22 @@
         <div class="w-full grid justify-items-center items-center xl:w-1/2">
             <img src="/image/Laboratory Analyst_Two Color 1.png" class="mt-4" width="500" height="500" alt="">
         </div>
+        <div class="w-full my-7">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Info</label>
+            <p class="font-semibold text-justify my-3" style="text-indent: 0.5in;">Teknologi Labolatorium Medik atau pranata laboratorium adalah bagian dari profesi di bidang kesehatan. Selama ini masyarakat lebih mengenal dokter, perawat, bidan, apoteker. Sedangkan Teknologi Labolatorium Medik jarang dikenal.  Seorang medik harus memiliki ketrampilan dan tanggung jawab yang tinggi dalam pemeriksaan sampel. Hal ini berhubungan dengan adanya risiko yang fatal jika terjadi kesalahan.</p>
+            <p class="font-semibold text-justify mb-3" style="text-indent: 0.5in;">Teknologi Labolatorium Medik juga berati profesi yang bekerja pada sarana kesehatan yang melaksanakan pelayanan pemeriksaan, pengukuran, penetapan, dan pengujian terhadap bahan yang berasal dari manusia atau bahan bukan berasal dari manusia untuk penentuan jenis penyakit, penyebab penyakit, kondisi kesehatan atau faktor-faktor yang dapat berpengaruh pada kesehatan perorangan dan masyarakat.Sarana kesehatan ini berbentuk Laboratorium Kesehatan seperti Laboratorium Patologi Klinik yang memeriksa sampel berupa cairan2 tubuh manusia seperti darah, sputum, faeces, urine, liquor cerebro spinalis (cairan otak), dan lain-lain untuk mendapatkan data atau hasil sebagai penegakan diagnosa terhadap suatu penyakit. Cakupannya juga luas meliputi pemeriksaan mikrobiologi (bakteri), parasitologi (fungi, protozoa, cacing) hematologi (sel-sel darah serta plasma), imunologi (antigen, antibodi), kimia klinik (hormon, enzim, glukosa, lipid, protein, elektrolit, dll).</p>
+            <p class="font-semibold text-justify mb-3" style="text-indent: 0.5in;">Teknologi Labolatorium Medik juga ada yang bekerja di Laboratorium Patologi Anatomi yang memeriksa sampel berupa jaringan hasil operasi (histopatologi). Selain itu Banyak pula yang bekerja di Industri makanan dan minuman, obat serta kosmetik karena dalam kurikulum pengajarannya terdapat mata kuliah Kimia Analitik, Kimia Makanan dan Minuman, serta Toksikologi.</p>
+            <p class="font-semibold text-justify mb-3" style="text-indent: 0.5in;">Semua cakupan Laboratorium Kesehatan yang disebut diatas berlaku baik milik pemerintah maupun swasta. kebanyakan orang slah mengartikan Teknologi Labolatorium Medik srbagai seorang dokter, tapi sebenertan tugas seorang medik lebih rinci dan menjurus pada diagnosa penyakit yang dibuktikan dengan diagnosa Laboraturium.</p>
+        </div>
+
+        <div class="w-full my-7">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Teknologi Labolatorium Medik ini didukung oleh:</label>
+            <ol class="list-decimal px-5 py-3 font-semibold">
+                <li>Guru-guru SMK Harapan Bangsa yang berkompeten</li>
+                <li>Fasilitas yang memadai</li>
+                
+            </ol>
+        </div>
 
         <div class="w-full mb-14">
             <label class="text-3xl font-bold text-bold text-gray-00" for="cus_name">Fasilitas</label>

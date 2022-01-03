@@ -12,6 +12,20 @@
         <div class="w-full grid justify-items-center items-center xl:w-1/2">
             <img src="/image/Online report_Outline 1.png" class="mt-4" width="500" height="500" alt="">
         </div>
+        <div class="w-full my-7">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Info</label>
+            <p class="font-semibold text-justify my-3" style="text-indent: 0.5in;">Sistem informasi akutansi merupakan salah satu bidang tekhnologi informasi (TI) yang didukung dengan kemampuan dan penguasaan dalam bidang akutansi. Komputerisasi akutansi adalah sebuah sistem akutansi dimana komputer sebagai tekhnologi untuk menjalankan aplikasi yang digunakan dalam mengolah transaksi akutansi dan sekaligus untuk menghasilkan laporan keuangan dalam sebuah perusahaan.</p>
+            <p class="font-semibold text-justify" style="text-indent: 0.5in;">Myob adalah salah satu aplikasi yang dipakai dijurusan Akutansi Komputer, Myob sendiri merupakan salah satu paket software akutansi umum yang cukup populer di Indonesia, dan pada umumnya sering dipakai di perusahaan Indonesia.</p>
+        </div>
+
+        <div class="w-full my-7">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Akuntansi Komputer ini didukung oleh:</label>
+            <ol class="list-decimal px-5 py-3 font-semibold">
+                <li>Guru-guru SMK Harapan Bangsa yang berkompeten</li>
+                <li>Fasilitas yang memadai</li>
+                
+            </ol>
+        </div>
 
         <div class="w-full mb-14">
             <label class="text-3xl font-bold text-bold text-gray-00" for="cus_name">Fasilitas</label>

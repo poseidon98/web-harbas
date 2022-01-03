@@ -4,7 +4,9 @@
     <title>SMK Harapan Bangsa</title>
     <link rel="shortcut icon" href="/image/logo-HB.png" type="image/x-icon">
     <meta charset="UTF-8" />
-
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <script src="js/owl.carousel.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -68,19 +70,17 @@
             transition: background-color 0.5s;
             -webkit-transition: background-color 0.5s;
         }
-
     </style>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(window).scroll(function() {
             var y = $(window).scrollTop()
-            if (y <= 300) {
+            if (y <= 100) {
                 $('header').css('background-color', 'transparent');
             } else if (y <= 700) {
-                $('header').css('background-color', '2978B5');
+                $('header').css('background-color', '76b82a');
             }
         });
-
     </script>
 
 </head>
@@ -160,7 +160,6 @@
         }
         return false;
     }
-
 </script>
 
 </html>

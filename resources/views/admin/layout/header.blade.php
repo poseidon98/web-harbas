@@ -22,14 +22,13 @@
                     </button>
                     <div id="userMenu" class="bg-white rounded shadow-md absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
                         <ul class="list-reset">
-                                    <li>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
 
-                                            <input type="submit" value="Logout"
-                                                class="px-4 py-2 block text-gray-900 w-full bg-white hover:bg-gray-400 no-underline hover:no-underline">
-                                        </form>
-                                    </li>
+                                    <input type="submit" value="Logout" class="px-4 py-2 block text-gray-900 w-full bg-white hover:bg-gray-400 no-underline hover:no-underline">
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -65,16 +64,21 @@
                         <i class="fa fa-envelope fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Calon Siswa</span>
                     </a>
                 </li>
-                <!-- <li class="mr-6 my-2 md:my-0">
-                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-green-500">
-                        <i class="fas fa-chart-area fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Analytics</span>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="/admin/prestasi" class="{{ request()->is('admin/prestasi*') ? 'border-green-500' : '' }} block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-green-500">
+                        <i class="fas fa-chart-area fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Prestasi</span>
                     </a>
                 </li>
                 <li class="mr-6 my-2 md:my-0">
-                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-red-500">
-                        <i class="fa fa-wallet fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Payments</span>
+                    <a href="/admin/review" class="{{ request()->is('admin/review*') ? 'border-red-500' : '' }} block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-red-500">
+                        <i class="fa fa-wallet fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Review</span>
                     </a>
-                </li> -->
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="/admin/affiliate" class="{{ request()->is('admin/affiliate*') ? 'border-yellow-500' : '' }} block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-yellow-500">
+                        <i class="fa fa-wallet fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Affiliate</span>
+                    </a>
+                </li>
             </ul>
 
             <!-- <div class="relative pull-right pl-4 pr-4 md:pr-0">

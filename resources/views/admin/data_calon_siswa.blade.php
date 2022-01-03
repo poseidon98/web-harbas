@@ -8,6 +8,11 @@
                 <div class="">
                     <p class="text-4xl">Data Calon Siswa</p>
                 </div>
+                <div>
+                    <a href="/admin/calonsiswa/cetak"><div class="rounded-2xl px-2 py-1 bg-green-700 text-white">
+                        Cetak Excel
+                    </div></a>
+                </div>
             </div>
             <div class="w-full overflow-x-auto">
                 <div class="shadow-md rounded my-6">

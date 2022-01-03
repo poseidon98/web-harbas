@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DataModel;
 use Illuminate\Support\Facades\File;
+use App\Exports\SiswaExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -123,5 +125,10 @@ class AdminController extends Controller
     {
         $this->DataModel->hapusDataGuru($kode);
         return back();
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new SiswaExport, 'siswa.xlsx');
     }
 }

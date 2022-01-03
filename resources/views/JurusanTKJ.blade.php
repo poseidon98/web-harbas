@@ -13,6 +13,21 @@
         <div class="w-full grid justify-items-center items-center xl:w-1/2">
             <img src="/image/Coding.png" class="mt-4" width="500" height="500" alt="">
         </div>
+        <div class="w-full my-10">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Info</label>
+            <p class="font-semibold text-justify my-3" style="text-indent: 0.5in;">Teknik Komputer Jaringan merupakan jurusan yang mempelajari ilmu berbasis Teknologi Informasi dan Komunikasi terkait kemampuan pemograman komputer, Perakitan komputer, merancang bangun jaringan dan pengoperasian perangkat lunak.</p>
+            <p class="font-semibold text-justify" style="text-indent: 0.5in;">Jurusan ini sangat diminati oleh siswa sekarang yang dimana mereka harus mengetahui perkembangan teknologi sekarang.TKJ ini sendiri berdiri untuk menciptakan siswa/siswi yang berkompeten untuk terjun didunia industri.</p>
+        </div>
+
+        <div class="w-full my-10">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Teknik Komputer dan Jaringan ini didukung oleh:</label>
+            <ol class="list-decimal px-5 py-3 font-semibold">
+                <li>Guru-guru SMK Harapan Bangsa yang berkompeten</li>
+                <li>IT Club TKJ Harbas</li>
+                <li>Fasilitas yang memadai</li>
+                
+            </ol>
+        </div>
 
         <div class="w-full mb-14">
 

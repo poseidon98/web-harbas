@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\AffiliateController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +29,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::get('/', function () {
-    return view('landing-page');
-});
+Route::get('/', [HomeController::class, 'Index']);
+
 
 Route::get('/form-pendaftaran', function () {
     return view('form_pendaftaran');
@@ -59,9 +62,8 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/prestasi', function () {
-    return view('prestasi');
-});
+Route::get('/prestasi', [HomeController::class, 'prestasi']);
+
 
 // Route::get('/struktur', function () {
 //     return view('bagan_sekolah');
@@ -89,3 +91,33 @@ Route::get('/admin/calonsiswa/edit/{kode}', [AdminController::class, 'editDetail
 Route::post('/admin/calonsiswa/edit/proses/{kode}', [AdminController::class, 'editDataCalonSiswa']);
 Route::post('/admin/calonsiswa/konfirmbayar/{kode}', [AdminController::class, 'konfirmasiPembayaranCalonSiswa']);
 Route::get('/admin/calonsiswa/hapus/{kode}', [AdminController::class, 'hapusDataCalonSiswa']);
+Route::get('/admin/calonsiswa/cetak', [AdminController::class, 'exportExcel']);
+
+
+Route::get('/admin/prestasi', [PrestasiController::class, 'adminDataPrestasi']);
+Route::get('/admin/prestasi/add', function () {
+    return view('admin/prestasi.add_prestasi');
+})->middleware('auth');
+Route::post('/admin/prestasi/add/proses', [PrestasiController::class, 'addDataPrestasi']);
+Route::get('/admin/prestasi/edit/{kode}', [PrestasiController::class, 'detailDataPrestasi']);
+Route::post('/admin/prestasi/edit/proses/{kode}', [PrestasiController::class, 'editDataPrestasi']);
+Route::get('/admin/prestasi/hapus/{kode}', [PrestasiController::class, 'hapusDataPrestasi']);
+
+Route::get('/admin/review', [ReviewController::class, 'adminDataReview']);
+Route::get('/admin/review/add', function () {
+    return view('admin/review.add_review');
+})->middleware('auth');
+Route::post('/admin/review/add/proses', [ReviewController::class, 'addDataReview']);
+Route::get('/admin/review/edit/{kode}', [ReviewController::class, 'detailDataReview']);
+Route::post('/admin/review/edit/proses/{kode}', [ReviewController::class, 'editDataReview']);
+Route::get('/admin/review/hapus/{kode}', [ReviewController::class, 'hapusDataReview']);
+
+
+Route::get('/admin/affiliate', [AffiliateController::class, 'adminAffiliate']);
+Route::get('/admin/affiliate/add', function () {
+    return view('admin/affiliate.add_affiliate');
+})->middleware('auth');
+Route::post('/admin/affiliate/add/proses', [AffiliateController::class, 'addDataAffiliate']);
+Route::get('/admin/affiliate/edit/{kode}', [AffiliateController::class, 'detailAffiliate']);
+Route::post('/admin/affiliate/edit/proses/{kode}', [AffiliateController::class, 'editAffiliate']);
+Route::get('/admin/affiliate/hapus/{kode}', [AffiliateController::class, 'hapusAffiliate']);

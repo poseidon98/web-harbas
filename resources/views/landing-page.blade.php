@@ -176,37 +176,25 @@
 
         <div class="w-full flex flex-wrap">
             <h4 class="ml-7 text-2xl font-bold">Pendapat Alumni</h4>
-            <div class="flex flex-wrap my-5 w-full">
+            <div class="flex flex-wrap my-5 w-full justify-center">
+                @foreach ($review as $item)
                 <div class="w-full md:1/2 lg:w-1/3 xl:w-1/3">
                     <div class="mx-7 my-5 shadow-md rounded-3xl border justify-items-center text-center h-48 w-auto">
                         <img src="/image/user.png" class="inline mt-3" width="64" height="64" alt="">
-                        <p class="text-lg">“Guru Baik, dan membina dengan baik”</p>
-                        <p class="text-sm mt-3 mb-5">Ali Imran</p>
+                        <p class="text-lg">“{{ $item->nama_alumni }}”</p>
+                        <p class="text-sm mt-3 mb-5">{{ $item->isi_review }}</p>
                     </div>
                 </div>
-
-                <div class="w-full md:1/2 lg:w-1/3 xl:w-1/3">
-                    <div class="mx-7 my-5 shadow-md rounded-3xl border justify-items-center text-center h-48 w-auto">
-                        <img src="/image/user.png" class="inline mt-3" width="64" height="64" alt="">
-                        <p class="text-lg">“Memberikan lingkungan yang baik, serta guru yang friendly”</p>
-                        <p class="text-sm mt-3 mb-5">Tegar Prasetyo</p>
-                    </div>
-                </div>
-
-                <div class="w-full md:1/2 lg:w-1/3 xl:w-1/3">
-                    <div class="mx-7 my-5 shadow-md rounded-3xl border justify-items-center text-center h-48 w-auto">
-                        <img src="/image/user.png" class="inline mt-3" width="64" height="64" alt="">
-                        <p class="text-lg">“Pembelajaran yang seru, jadi gampang di ingat”</p>
-                        <p class="text-sm mt-3 mb-5">Zeta Adha</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="w-full text-center ml-7 mt-5">
                 <h4 class="text-2xl font-bold">Kerja Sama</h4>
             </div>
 
-            <div class="flex flex-wrap mx-7 my-5 w-full">
+            
+
+            {{-- <div class="flex flex-wrap mx-7 my-5 w-full">
                 <div class="carousel relative shadow-2xl w-full bg-white leading-normal tracking-normal">
                     <div class="carousel-inner relative overflow-hidden w-full">
                         <!--Slide 1-->
@@ -215,6 +203,7 @@
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
                             <div class="h-full w-full text-white text-5xl flex justify-center items-center">
                                 <div class="flex flex-wrap justify-center mx-7 my-5 w-full">
+                                    
                                     <div class="flex justify-center items-center w-1/5">
                                         <img src="/image/pharos.png" class="inline" width="116" height="136" alt="">
                                     </div>
@@ -307,48 +296,18 @@
 
                     </div>
                 </div>
+            </div> --}}
+
+            <div class="flex flex-wrap justify-center mx-7 my-5 w-full">
+                @foreach ($kerja_sama as $data)
+                <div class="flex justify-center items-center w-1/5">
+                    <img src="/image/logo/affiliate/{{ $data->file_logo }}" class="inline" width="116" height="136" alt="">
+                </div>
+                @endforeach
             </div>
 
-            <!-- <div class="flex flex-wrap mx-7 my-5 w-full">
-                                                <div class="w-full flex justify-center items-center xl:w-1/5">
-                                                    <img src="/image/pharos.png" class="inline" width="116" height="136" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/cropped-Logo-Kimia-Farma-Laboratorium-Klinik-1.png" class="inline" width="207" height="91" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/18544481552013071901213823Apotek K-24.jpg" width="183" height="183" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/download.png" width="227" height="98" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/biznet_logo-1571886850.png" width="282" height="86" class="" alt="">
-                                                </div>
-
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/logo-nusanet-transparent.png" width="251" height="75" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/LOGO_O-Academy-rgb.png" width="200" height="91" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/RHA_logo_1.png" width="143" height="147" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/13814801SMK-Bisa-Hebat.jpg" width="160" height="160" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/TKJ_kota_depok.jpeg" width="133" height="133" class="" alt="">
-                                                </div>
-                                                <div class="w-full flex justify-center items-center text-center xl:w-1/5">
-                                                    <img src="/image/mikrotik.jpeg" width="289" height="149" class="" alt="">
-                                                </div>
-                                            </div> -->
-
-
     </main>
-    <footer class="w-full blue">
+    <footer class="w-full green">
         <div class="flex flex-wrap mx-7 text-white">
             <div class="w-full my-7 text-justify xl:w-1/3">
                 <p class="text-2xl xl:font-semibold">SMK Harapan Bangsa</p>
@@ -369,4 +328,10 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel();
+        });
+    </script>
 @endsection

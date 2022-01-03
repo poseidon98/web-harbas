@@ -12,6 +12,31 @@
         <div class="w-full grid justify-items-center items-center xl:w-1/2">
             <img src="/image/Health _Flatline 1.png" class="mt-4" width="500" height="500" alt="">
         </div>
+        <div class="w-full my-7">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Info</label>
+            <p class="font-semibold text-justify my-3" style="text-indent: 0.5in;">Perkembangan bidang Farmasi di Indonesia, menghendaki adanya tenaga tekhnis kefarmasian formal jenjang menengah yang mampu bekerja dalam proses produksi, distribusi, administrasi, maupun dalam penyuluhan kepada masyarakat dibidang farmasi.</p>
+            <p class="font-semibold text-justify mb-3" style="text-indent: 0.5in;">Pengembangan tenaga kesehatan menuju Indonesia sehat 2010 menegaskan bahwa tenaga kesehatan profesional adalah tenaga kesehatan tingkat menengah yang sudah mempunyai keahlian dibidang kesehatan.</p>
+            <p class="font-semibold text-justify mb-3" style="text-indent: 0.5in;">Perkembangan kebijakan pendidikan pemerintah c.q. Departemen Pendidikan Nasional yang mendorong pengembangan SMK, melalui pembentukan unit – unit SMK baru maupun penambahan siswa SMK.</p>
+            <p class="font-semibold text-justify mb-3" style="text-indent: 0.5in;">Farmasi Kesehatan adalah cabang ilmu yang mempelajari tentang pembuatan sediaan farmasi yang baik. Sediaan farmasi dapat berupa obat, bahan obat, obat tradisional dan lain sebagainya.</p>
+        </div>
+
+        <div class="w-full my-7">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Propek Lulusan Farmasi:</label>
+            <ol class="list-decimal px-5 py-3 font-semibold">
+                <li>Asisten Apoteker pada instalasi Apotek, instansi Rumah Sakit baik pemerintah maupun swasta</li>
+                <li>Tenaga penyuluhan kesehatan masyarakat di Puskesmas</li>
+                <li>Tenaga tekhnisi di Industri Obat, Makanan, Minuman, Alat kesehatan dll</li>
+                <li>Melanjutkan Pendidikan keperguruan Tinggi Negri maupun Swasta</li>
+            </ol>
+        </div>
+
+        <div class="w-full my-7">
+            <label class="text-3xl font-bold text-bold" for="cus_name">Farmasi Kesehatan ini didukung oleh :</label>
+            <ol class="list-decimal px-5 py-3 font-semibold">
+                <li>Guru-guru SMK Harapan Bangsa yang berkompeten</li>
+                <li>Fasilitas yang memadai</li>
+            </ol>
+        </div>
 
         <div class="w-full mb-14">
             <label class="text-3xl font-bold text-bold text-gray-00" for="cus_name">Fasilitas</label>
