@@ -6,10 +6,10 @@
             <!-- component -->
             <div class="w-full flex items-center justify-between">
                 <div class="">
-                    <p class="text-4xl">Data Prestasi</p>
+                    <p class="text-4xl">Data Ekstrakulikuler</p>
                 </div>
                 <div class="">
-                    <a href="/admin/prestasi/add "
+                    <a href="/admin/ekskul/add "
                         class="bg-blue-500 px-4 py-2 font-semibold tracking-wider text-white rounded hover:bg-blue-600">Tambah
                         data</a>
                 </div>
@@ -20,9 +20,8 @@
                         <thead>
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                 <th class="py-3 px-6 text-left">No</th>
-                                <th class="py-3 px-6 text-left">Nama Lomba</th>
-                                <th class="py-3 px-6 text-left">Juara</th>
-                                <th class="py-3 px-6 text-center">Tahun</th>
+                                <th class="py-3 px-6 text-left">Nama Ekstrakulikuler</th>
+                                <th class="py-3 px-6 text-left">logo</th>
                                 <th class="py-3 px-6 text-center">Action</th>
                             </tr>
                         </thead>
@@ -30,7 +29,7 @@
                             <?php
                             $no = 1;
                             ?>
-                            @foreach ($lomba as $data)
+                            @foreach ($ekskul as $data)
 
                                 <tr class="border-b border-gray-200 hover:bg-gray-100">
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
@@ -40,28 +39,26 @@
                                     </td>
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         <div class="flex items-center">
-                                            <span class="font-medium">{{ $data->nama_lomba }}</span>
+                                            <span class="font-medium">{{ $data->nama_ekskul }}</span>
                                         </div>
                                     </td>
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         <div class="flex items-center">
-                                            <span class="font-medium">{{ $data->juara }}</span>
+                                            <img src="/image/logo/ekskul/{{ $data->logo_ekskul }}" class="w-32"
+                                                alt="">
+                                            <span class="font-medium">{{ $data->logo_ekskul }}</span>
                                         </div>
                                     </td>
-                                    <td class="py-3 px-6 text-left">
-                                        <div class="flex items-center">
-                                            <span>{{ $data->tahun }}</span>
-                                        </div>
-                                    </td>
+
                                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">
                                             <!-- <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                                </svg>
-                                                            </div> -->
-                                            <a href="/admin/prestasi/edit/{{ $data->id }}"
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                                                            </svg>
+                                                                                        </div> -->
+                                            <a href="/admin/ekskul/edit/{{ $data->id_ekskul }}"
                                                 class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor">
@@ -69,7 +66,7 @@
                                                         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                 </svg>
                                             </a>
-                                            <a href="/admin/prestasi/hapus/{{ $data->id }}"
+                                            <a href="/admin/ekskul/hapus/{{ $data->id_ekskul }}"
                                                 onclick="return confirm('anda yakin ingin hapus data?')"
                                                 class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

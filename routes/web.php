@@ -7,7 +7,7 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\AffiliateController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\EkskulController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,7 +91,8 @@ Route::get('/admin/calonsiswa/edit/{kode}', [AdminController::class, 'editDetail
 Route::post('/admin/calonsiswa/edit/proses/{kode}', [AdminController::class, 'editDataCalonSiswa']);
 Route::post('/admin/calonsiswa/konfirmbayar/{kode}', [AdminController::class, 'konfirmasiPembayaranCalonSiswa']);
 Route::get('/admin/calonsiswa/hapus/{kode}', [AdminController::class, 'hapusDataCalonSiswa']);
-Route::get('/admin/calonsiswa/cetak', [AdminController::class, 'exportExcel']);
+Route::get('/admin/calonsiswa/cetak/excel', [AdminController::class, 'exportExcel']);
+Route::get('/admin/calonsiswa/cetak/pdf/{kode}', [AdminController::class, 'cetakPDF']);
 
 
 Route::get('/admin/prestasi', [PrestasiController::class, 'adminDataPrestasi']);
@@ -121,3 +122,23 @@ Route::post('/admin/affiliate/add/proses', [AffiliateController::class, 'addData
 Route::get('/admin/affiliate/edit/{kode}', [AffiliateController::class, 'detailAffiliate']);
 Route::post('/admin/affiliate/edit/proses/{kode}', [AffiliateController::class, 'editAffiliate']);
 Route::get('/admin/affiliate/hapus/{kode}', [AffiliateController::class, 'hapusAffiliate']);
+
+Route::get('/admin/ekskul', [EkskulController::class, 'adminEkskul']);
+Route::get('/admin/ekskul/add', function () {
+    return view('admin/ekskul.add_ekskul');
+})->middleware('auth');
+Route::post('/admin/ekskul/add/proses', [EkskulController::class, 'addDataEkskul']);
+Route::get('/admin/ekskul/edit/{kode}', [EkskulController::class, 'detailEkskul']);
+Route::post('/admin/ekskul/edit/proses/{kode}', [EkskulController::class, 'editEkskul']);
+Route::get('/admin/ekskul/hapus/{kode}', [EkskulController::class, 'hapusEkskul']);
+
+Route::get('/kirimemail', [DataController::class, 'KonfirmasiEmail']);
+
+// END
+Route::get('admin/clear/cache', function () {
+    \Artisan::call('view:clear');
+    \Artisan::call('cache:clear');
+    \Artisan::call('route:clear');
+    \Artisan::call('config:clear');
+    return ("Cache clear successfull");
+});

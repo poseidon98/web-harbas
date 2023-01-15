@@ -7,6 +7,7 @@ use App\Models\DataModel;
 use Illuminate\Support\Facades\File;
 use App\Exports\SiswaExport;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class AdminController extends Controller
 {
@@ -62,6 +63,7 @@ class AdminController extends Controller
             'no_hp_siswa' => Request()->no_hp_siswa,
             'konfirmasi_pembayaran' => Request()->konfirmasi_pembayaran,
         ];
+
         $this->DataModel->editDataCalonSiswa($kode, $data);
         return redirect('/admin/calonsiswa');
     }
@@ -77,6 +79,8 @@ class AdminController extends Controller
 
     public function hapusDataCalonSiswa($kode)
     {
+        $gambar = $this->DataModel->detailDataCalonSiswa($kode);
+        File::delete('image/bukti_bayar/' . $gambar->bukti_bayar);
         $this->DataModel->hapusDataCalonSiswa($kode);
         return back();
     }
@@ -130,5 +134,16 @@ class AdminController extends Controller
     public function exportExcel()
     {
         return Excel::download(new SiswaExport, 'siswa.xlsx');
+    }
+
+    public function cetakPDF($kode)
+    {
+
+        $data = [
+            'siswa' => $this->DataModel->detailDataCalonSiswa($kode),
+        ];
+
+        $pdf = PDF::loadview('admin.cetak_pdf_siswa', $data)->setPaper('a5', 'potrait');;
+        return $pdf->stream();
     }
 }

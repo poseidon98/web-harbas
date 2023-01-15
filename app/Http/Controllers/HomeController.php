@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Review;
 use App\Models\Affiliate;
 use App\Models\PrestasiModel;
+use App\Models\Ekskul;
 
 class HomeController extends Controller
 {
@@ -21,6 +22,7 @@ class HomeController extends Controller
         $data = [
             'kerja_sama' => $this->KerjaSama->get(),
             'review' => $this->review->get(),
+            'ekskul' => Ekskul::get(),
         ];
         return view('landing-page', $data);
     }

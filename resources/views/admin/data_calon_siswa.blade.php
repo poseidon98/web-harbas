@@ -9,9 +9,11 @@
                     <p class="text-4xl">Data Calon Siswa</p>
                 </div>
                 <div>
-                    <a href="/admin/calonsiswa/cetak"><div class="rounded-2xl px-2 py-1 bg-green-700 text-white">
-                        Cetak Excel
-                    </div></a>
+                    <a href="/admin/calonsiswa/cetak/excel">
+                        <div class="rounded-2xl px-2 py-1 bg-green-700 text-white">
+                            Cetak Excel
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="w-full overflow-x-auto">
@@ -60,7 +62,7 @@
                                         </div>
                                     </td>
                                     <td class="py-3 px-6 text-center">
-                                        <div class="flex items-center">
+                                        <div class="flex justify-center">
                                             <?php $warna = 'bg-black'; ?>
                                             @if ($data->konfirmasi_pembayaran == 'Terkonfirmasi')
                                                 <?php $warna = 'bg-green-600'; ?>
@@ -72,9 +74,20 @@
                                                 {{ $data->konfirmasi_pembayaran }}
                                             </span>
                                         </div>
+                                        <div class="flex justify-center">
+                                            <a href="https://api.whatsapp.com/send?phone={{ $data->no_hp_siswa }}&text=Halo {{ $data->nama_lengkap }},%0A%0Auntuk pendaftaran online sudah berhasil dilakukan. Silahkan cek email untuk melihat konfirmasi pendaftaran.%0A%0ANB:%0A- Konfirmasi pendaftaran digunakan untuk syarat pengisian berkas berikutnya%0A- Calon siswa diharap stand by untuk menerima info berikutnya"
+                                                target="_blank">
+                                                <img src="https://img.icons8.com/material-outlined/24/000000/whatsapp--v1.png"
+                                                    class="inline" />
+                                            </a>
+                                            <a href="/admin/calonsiswa/cetak/pdf/{{ $data->id }}" target="_blank"><img
+                                                    src="https://img.icons8.com/material-outlined/24/000000/pdf.png"
+                                                    class="inline" /></a>
+                                        </div>
                                     </td>
                                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">
+
                                             <a href="/admin/calonsiswa/detail/{{ $data->id }}"
                                                 class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

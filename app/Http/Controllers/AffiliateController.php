@@ -91,6 +91,8 @@ class AffiliateController extends Controller
 
     public function hapusAffiliate($kode)
     {
+        $gambar = $this->DataModel->detailDataAffiliate($kode);
+        File::delete('image/logo/affiliate/' . $gambar->file_logo);
         $this->DataModel->hapusDataAffiliate($kode);
         return back();
     }

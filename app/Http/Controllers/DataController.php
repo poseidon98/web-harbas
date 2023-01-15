@@ -6,6 +6,8 @@ use App\Models\DataModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EmailKonfirmasi;
 
 class DataController extends Controller
 {
@@ -34,9 +36,17 @@ class DataController extends Controller
         if (!File::exists($path)) {
             File::makeDirectory($path, 0777, true, false);
         }
+
+        if (Request()->sumber_info == "Teman") {
+            $rekomendasi = Request()->nama_teman;
+        } else {
+            $rekomendasi = "-";
+        }
+
         // pindahkan file
         $bukti_bayar->move(public_path('/image/bukti_bayar'), $fileName);
-
+        date_default_timezone_set("Asia/Jakarta");
+        $saat_ini = date("Y-m-d h:i:s");
         $data = [
             'email' => Request()->email,
             'nama_lengkap' => $nama_lengkap,
@@ -57,8 +67,57 @@ class DataController extends Controller
             'bukti_bayar' => $fileName,
             'sumber_info' => Request()->sumber_info,
             'konfirmasi_pembayaran' => 'Belum Konfirmasi',
+            'created_at' => date("Y-m-d h:i:s"),
+            'nama_teman' => $rekomendasi,
         ];
         $this->DataModel->addDataCalonSiswa($data);
-        return redirect('https://api.whatsapp.com/send?phone=+628982023608&text=ingin mengkorfimasi pembayaran atas nama =' . $nama_lengkap . ' ');
+
+        Request()->session()->flush();
+        Request()->session()->put('email', Request()->email);
+        Request()->session()->put('nama_lengkap', Request()->nama_lengkap);
+        Request()->session()->put('jekel', Request()->jekel);
+        Request()->session()->put('jurusan', Request()->jurusan);
+        Request()->session()->put('tmpt_tgl_lahir', Request()->tmpt_tgl_lahir);
+        Request()->session()->put('agama', Request()->agama);
+        Request()->session()->put('alamat', Request()->alamat);
+        Request()->session()->put('sekolah_asal', Request()->sekolah_asal);
+        Request()->session()->put('nama_ayah', Request()->nama_ayah);
+        Request()->session()->put('nama_ibu', Request()->nama_ibu);
+        Request()->session()->put('pekerjaan_ortu', Request()->pekerjaan_ortu);
+        Request()->session()->put('nama_wali', Request()->nama_wali);
+        Request()->session()->put('alamat_wali', Request()->alamat_wali);
+        Request()->session()->put('pekerjaan_wali', Request()->pekerjaan_wali);
+        Request()->session()->put('no_hp_ortu', Request()->no_hp_ortu);
+        Request()->session()->put('no_hp_siswa', Request()->no_hp_siswa);
+        Request()->session()->put('tanggal', $saat_ini);
+
+        return redirect('/kirimemail');
+    }
+
+    public function KonfirmasiEmail()
+    {
+        // $email = Request()->email;
+
+        $email = Request()->session()->get('email');
+        $nama_lengkap = Request()->session()->get('nama_lengkap');
+        $jekel = Request()->session()->get('jekel');
+        $jurusan = Request()->session()->get('jurusan');
+        $tmpt_tgl_lahir = Request()->session()->get('tmpt_tgl_lahir');
+        $agama = Request()->session()->get('agama');
+        $alamat = Request()->session()->get('alamat');
+        $sekolah_asal = Request()->session()->get('sekolah_asal');
+        $nama_ayah = Request()->session()->get('nama_ayah');
+        $nama_ibu = Request()->session()->get('nama_ibu');
+        $pekerjaan_ortu = Request()->session()->get('pekerjaan_ortu');
+        $nama_wali = Request()->session()->get('nama_wali');
+        $alamat_wali = Request()->session()->get('alamat_wali');
+        $pekerjaan_wali = Request()->session()->get('pekerjaan_wali');
+        $no_hp_ortu = Request()->session()->get('no_hp_ortu');
+        $no_hp_siswa = Request()->session()->get('no_hp_siswa');
+        $tanggal = Request()->session()->get('tanggal');
+
+        Mail::to($email)->send(new EmailKonfirmasi());
+
+        return redirect('/form-pendaftaran/success');
     }
 }
